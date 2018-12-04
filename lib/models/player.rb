@@ -1,12 +1,17 @@
-require 'rest-client'
-require 'JSON'
-
 class Player < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :team
+
+  attr_accessor :first_name, :second_name, :now_cost, :avg_points, :user_id, :team_id
 
 
-  # response_string = RestClient.get('https://fantasy.premierleague.com/drf/bootstrap-static')
-  # response_hash = JSON.parse(response_string)
-
+  def pick_player(name)
+    filter_mid_array.each do |player_hash|
+      if player_hash["second_name"] == name
+         player_stats =  player_hash
+      end
+      @first_name = player_stats["first_name"]
+      @second_name = player_stats["second_name"]
+    end
+  end
 end
-response_string = RestClient.get('https://fantasy.premierleague.com/drf/bootstrap-static')
-response_hash = JSON.parse(response_string)

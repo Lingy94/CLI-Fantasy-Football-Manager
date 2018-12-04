@@ -32,7 +32,7 @@ def create_strike_array
   end[0..10]
 end
 
-def filter_gk_array
+def selected_data_gk_array
   create_gk_array.map do |player_hash|
     player_hash.select do |key, value|
       ["first_name", "second_name", "points_per_game", "now_cost"].include? key
@@ -40,7 +40,7 @@ def filter_gk_array
   end
 end
 
-def filter_mid_array
+def selected_data_mid_array
   create_mid_array.map do |player_hash|
     player_hash.select do |key, value|
       ["first_name", "second_name", "points_per_game", "now_cost"].include? key
@@ -48,7 +48,7 @@ def filter_mid_array
   end
 end
 
-def filter_def_array
+def selected_data_def_array
   create_def_array.map do |player_hash|
     player_hash.select do |key, value|
       ["first_name", "second_name", "points_per_game", "now_cost"].include? key
@@ -56,13 +56,59 @@ def filter_def_array
   end
 end
 
-def filter_strike_array
+def selected_data_strike_array
   create_strike_array.map do |player_hash|
     player_hash.select do |key, value|
       ["first_name", "second_name", "points_per_game", "now_cost"].include? key
     end
   end
 end
+
+
+def gk_populate_db_selected_data
+  selected_data_gk_array.each do |player_hash|
+    Player.create(first_name: player_hash.values[0], second_name: player_hash.values[1], avg_points: player_hash.values[3].to_f, cost_of_player: player_hash.values[2])
+  end
+end
+
+def def_populate_db_selected_data
+  selected_data_def_array.each do |player_hash|
+    Player.create(first_name: player_hash.values[0], second_name: player_hash.values[1], avg_points: player_hash.values[3].to_f, cost_of_player: player_hash.values[2])
+  end
+end
+
+def mid_populate_db_selected_data
+  selected_data_mid_array.each do |player_hash|
+    Player.create(first_name: player_hash.values[0], second_name: player_hash.values[1], avg_points: player_hash.values[3].to_f, cost_of_player: player_hash.values[2])
+  end
+end
+
+def strike_populate_db_selected_data
+  selected_data_mid_array.each do |player_hash|
+    Player.create(first_name: player_hash.values[0], second_name: player_hash.values[1], avg_points: player_hash.values[3].to_f, cost_of_player: player_hash.values[2])
+  end
+end
+
+def populate_players_table
+  gk_populate_db_selected_data
+  def_populate_db_selected_data
+  mid_populate_db_selected_data
+  strike_populate_db_selected_data
+end
+
+# def pick_player(name)
+#   filter_mid_array.each do |player_hash|
+#     if player_hash["second_name"] == name
+#        player_stats =  player_hash
+#        binding.pry
+#     end
+#     Player.new(first)
+#     @first_name = player_stats["first_name"]
+#     @second_name = player_stats["second_name"]
+#
+#     Player.create()
+#   end
+# end
 
 #   player_hash.each do |key, value|
 #       if key == "first_name" || key == "second_name" || key == "now_cost" || key == "points_per_game"

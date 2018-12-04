@@ -1,4 +1,5 @@
 class Team < ActiveRecord::Base
-  has_many :players
-  has_many :users, through: :players
+  belongs_to :user
+  has_many :lineups
+  has_many :players, through: :lineups
 end

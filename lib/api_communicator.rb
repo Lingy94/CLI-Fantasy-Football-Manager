@@ -84,7 +84,7 @@ def mid_populate_db_selected_data
 end
 
 def strike_populate_db_selected_data
-  selected_data_mid_array.each do |player_hash|
+  selected_data_strike_array.each do |player_hash|
     Player.create(first_name: player_hash.values[0], second_name: player_hash.values[1], avg_points: player_hash.values[3].to_f, cost_of_player: player_hash.values[2], element_type: player_hash.values[4])
   end
 end

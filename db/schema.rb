@@ -12,16 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20181204150415) do
 
-  create_table "lineups", force: :cascade do |t|
-    t.integer "team_id"
-    t.integer "player_id"
-  end
-
   create_table "players", force: :cascade do |t|
     t.string  "first_name"
     t.string  "second_name"
     t.integer "avg_points"
     t.integer "cost_of_player"
+    t.integer "element_type"
+  end
+
+  create_table "selections", force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "player_id"
   end
 
   create_table "teams", force: :cascade do |t|

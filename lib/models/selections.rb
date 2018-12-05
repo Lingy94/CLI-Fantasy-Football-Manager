@@ -1,4 +1,4 @@
-class Lineup < ActiveRecord::Base
+class Selection < ActiveRecord::Base
   belongs_to :player
   belongs_to :team
 end

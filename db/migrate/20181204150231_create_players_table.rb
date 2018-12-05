@@ -5,6 +5,7 @@ class CreatePlayersTable < ActiveRecord::Migration[5.0]
           t.string :second_name
           t.integer :avg_points
           t.integer :cost_of_player
+          t.integer :element_type
         end
       end
     end

@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
   has_many :players, through: :selections
 
   def pick_goal_keeper
-        puts "\nPick your goalkeeper by typing their number.\n"
+        puts "\nPick your goalkeeper by typing their number.\n".colorize(:magenta)
         list_of_names = []
         selected_data_gk_array.each_with_index do |element, index|
         list_of_names << "#{index +1}. #{element["first_name"]} #{element["second_name"]}"
@@ -16,18 +16,18 @@ class Team < ActiveRecord::Base
           Player.all.each do |player_obj|
             if player_obj.second_name == chosen_player_name && player_obj.element_type == 1
               Selection.create(team_id: self.id, player_id: player_obj.id)
-              puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n"
+              puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n".colorize(:green)
             end
           end
         else
-          puts "\nInvalid number. Please select again from list.\n"
+          puts "\nInvalid number. Please select again from list.\n".colorize(:red)
           self.pick_goal_keeper
         end
       end
 
 
     def pick_defender
-      puts "\nPick your defender by typing their number.\n"
+      puts "\nPick your defender by typing their number.\n".colorize(:magenta)
       list_of_names = []
       selected_data_def_array.each_with_index do |element, index|
       list_of_names << "#{index + 1}. #{element["first_name"]} #{element["second_name"]}"
@@ -39,17 +39,17 @@ class Team < ActiveRecord::Base
         Player.all.each do |player_obj|
           if player_obj.second_name == chosen_player_name && player_obj.element_type == 2
           Selection.create(team_id: self.id, player_id: player_obj.id)
-          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n"
+          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n".colorize(:green)
         end
       end
       else
-        puts "\nInvalid number. Please select again from list.\n"
+        puts "\nInvalid number. Please select again from list.\n".colorize(:red)
         self.pick_defender
       end
     end
 
     def pick_midfielder(turn)
-      puts "\nPick your #{turn} midfielder by typing their number.\n"
+      puts "\nPick your #{turn} midfielder by typing their number.\n".colorize(:magenta)
       list_of_names = []
       selected_data_mid_array.each_with_index do |element, index|
       list_of_names << "#{index +1}. #{element["first_name"]} #{element["second_name"]}"
@@ -61,11 +61,11 @@ class Team < ActiveRecord::Base
         Player.all.each do |player_obj|
           if player_obj.second_name == chosen_player_name && player_obj.element_type == 3
           Selection.create(team_id: self.id, player_id: player_obj.id)
-          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n"
+          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n".colorize(:green)
         end
       end
       else
-        puts "\nInvalid number. Please select again from list.\n"
+        puts "\nInvalid number. Please select again from list.\n".colorize(:red)
         self.pick_midfielder(turn)
       end
     end
@@ -84,11 +84,11 @@ class Team < ActiveRecord::Base
         Player.all.each do |player_obj|
           if player_obj.second_name == chosen_player_name && player_obj.element_type == 4
           Selection.create(team_id: self.id, player_id: player_obj.id)
-          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n"
+          puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n".colorize(:green)
         end
       end
       else
-        puts "\nInvalid number. Please select again from list.\n"
+        puts "\nInvalid number. Please select again from list.\n".colorize(:red)
         self.pick_striker
       end
     end

@@ -1,4 +1,8 @@
 require 'bundler'
+require 'colorize'
+require 'terminal-table'
+require 'artii'
+
 Bundler.require
 
 ActiveRecord::Base.logger = nil

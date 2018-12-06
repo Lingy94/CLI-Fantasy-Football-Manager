@@ -64,14 +64,14 @@ end
 def declare_winner(result)
   if result.class == String
     puts "\nThe game was a draw!\n"
-  else puts "\nTeam #{result.team_name} won the match! Congrats, #{result.user.username}!\n"
+  else puts "\nTeam #{result.team_name} won the match! Congrats, #{result.user.username}!\n".colorize(:yellow)
   end
 end
 
 def play(hash)
   user = hash[:user]
   team = hash[:team]
-  puts "\nWhich team would you like to challenge?\n"
+  puts "\nWhich team would you like to challenge?\n".colorize(:magenta)
 #iterate
 numbered_teams = []
   list_of_teams = Team.all.map { |team_hash|
@@ -87,54 +87,48 @@ numbered_teams = []
     if list_of_teams.any? {|team_obj| team_obj == chosen_team_name}
       team_2 = Team.all.find {|team_obj| team_obj.team_name == chosen_team_name}
     else
-      puts "\nUnrecognised team, please try again.\n"
+      puts "\nUnrecognised team, please try again.\n".colorize(:red)
       play(hash)
     end
 
   result = compare_teams(team, team_2)
+  result.user.win
   declare_winner(result)
+  play_or_exit(hash)
 end
 
-# def compare_teams(team_2)
-#   team_1_total = 0
-#   self.players.each {|player| team_1_total += player.avg_points}
-#   team_2_total = 0
-#   team_2.players.each {|player| team_2_total += player.avg_points}
-#
-#   if team_1_total > team_2_total
-#     self.user.wins += 1
-#     team_2.user.losses += 1
-#     return team_1
-#   elsif team_2_total > team_1_total
-#     team_2.user.wins += 1
-#     self.user.losses +=1
-#     return team_2
-#   else
-#     self.user.draws += 1
-#     team_2.user.draws += 1
-#     return "Draw"
-#   end
-# end
+def compare_teams(team_1, team_2)
+  team_1_total = 0
+  team_1.players.each {|player| team_1_total += player.avg_points}
+  team_2_total = 0
+  team_2.players.each {|player| team_2_total += player.avg_points}
 
-  # def play_or_exit(hash)
-  #   puts "Would you like to challenge another team? (Y/N)"
-  #   choice = gets.chomp.downcase
-  #     if choice == "y"
-  #       play(hash)
-  #     else
-  #       return "Thanks for playing!"
-  #     end
-  #   end
+  if team_1_total > team_2_total
+    # team_1.user.win
+    # team_2.user.lose
+    return team_1
+  elsif team_2_total > team_1_total
+    # team_2.user.win
+    # team_1.user.lose
+    return team_2
+  else
+    # team_1.user.draw
+    # team_2.user.draw
+    return "Draw"
+  end
+end
 
+  def play_or_exit(hash)
+    puts "Would you like to challenge another team? (Y/N)"
+    choice = gets.chomp.downcase
+      if choice == "y"
+        play(hash)
+      elsif choice == "n"
+        return "Goodbye! Thanks for playing!".colorize(:yellow)
+      end
+    end
 
-
-
-
-# def play_teams(team1, team2)
-#
-#   list_of_teams = Team.all.map {|team| team.team_name}
-#   puts "Please select your opponent.\n #{list_of_teams}"
-# opponent = gets.chomp
-# total_points_for_team1 =
-# total_points_for_team2 =
-# end
+    def artify
+      a = Artii::Base.new
+      a.asciify('Wannabe Manager')
+    end

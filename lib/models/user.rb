@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :teams
+
 def win
 self.wins += 1
 end

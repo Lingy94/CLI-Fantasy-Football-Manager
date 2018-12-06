@@ -1,8 +1,16 @@
 def welcome
-  puts "Welcome to Fantasy Football by Jack and Tom!\n
-  You will need to select:\n1 Goalkeeper\n1 Defender\n2 Midfielders\n1 Striker\nWhat's your name?"
+  puts "Welcome to Fantasy Football by Jack and Tom!
+
+What's your name?"
   your_name = gets.chomp
-  return User.create(username: your_name)
+  current = User.all.find { |user_hash| user_hash.username == your_name }
+    if current
+      puts "\nWelcome back, #{current.username}!\n"
+      return current
+    else
+      puts "\nHi, #{your_name}!\n"
+      return User.create(username: your_name, wins: 0, losses: 0, draws: 0)
+    end
   #write condition to check if user already exists
 end
 
@@ -15,128 +23,108 @@ end
 # end
 
 def ask_for_team_name(user)
-  puts "What do you what to name your team?"
+  puts "\nWhat do you what to name your team?\n"
   your_team = gets.chomp
   return Team.create(team_name: your_team, user_id: user.id)
 end
 
-def pick_goal_keeper(team)
-  puts "Pick your Goal Keeper from second name"
-  list_of_names = selected_data_gk_array.map do |element|
-    element["second_name"]
-  end
-  puts list_of_names
-  your_goalie_name = gets.chomp
-  if Player.all.any? {|player_obj| player_obj.second_name == your_goalie_name}
-    Player.all.each do |player_obj|
-      if player_obj.second_name == your_goalie_name && player_obj.element_type == 1
-        Selection.create(team_id: team.id, player_id: player_obj.id)
-        puts "#{your_goalie_name} has been added to your team!"
-      end
-    end
-  else
-    puts "Invalid name. Please select again."
-    pick_goal_keeper(team)
-  end
-end
-
-
-  #if no valid keeper, prompt again
-
-
-def pick_defender(team)
-  puts "Pick your Defender from second name"
-  list_of_names = selected_data_def_array.map do |element|
-    element["second_name"]
-  end
-  puts list_of_names
-  your_defender_name = gets.chomp
-  if Player.all.any? {|player_obj| player_obj.second_name == your_defender_name}
-    Player.all.each do
-      |player_obj|if player_obj.second_name == your_defender_name && player_obj.element_type == 2
-      Selection.create(team_id: team.id, player_id: player_obj.id)
-      puts "#{your_defender_name} has been added to your team!"
-    end
-  end
-  else
-    puts "Invalid name. Please select again."
-    pick_defender(team)
-  end
-end
-
-def pick_midfielder(team, turn)
-  puts "Pick your #{turn} Midfielder from second name"
-  list_of_names = selected_data_mid_array.map do |element|
-    element["second_name"]
-  end
-  puts list_of_names
-  your_midfielder_name = gets.chomp
-  if Player.all.any? {|player_obj| player_obj.second_name == your_midfielder_name}
-  Player.all.each do |player_obj|
-    if player_obj.second_name == your_midfielder_name && player_obj.element_type == 3
-      Selection.create(team_id: team.id, player_id: player_obj.id)
-      puts "#{your_midfielder_name} has been added to your team!"
-    end
-  end
-  else
-    puts "Invalid name. Please select again."
-    pick_midfielder(team)
-  end
-end
-
-def pick_striker(team)
-  puts "Pick your Striker from second name"
-  list_of_names = selected_data_strike_array.map do
-    |element| element["second_name"]
-  end
-
-  puts list_of_names
-  your_striker_name = gets.chomp
-
-  if Player.all.any? {|player_obj| player_obj.second_name == your_striker_name}
-  Player.all.each do |player_obj|
-    if player_obj.second_name == your_striker_name && player_obj.element_type == 4
-      Selection.create(team_id: team.id, player_id: player_obj.id)
-      puts "#{your_striker_name} has been added to your team!"
-    end
-  end
-  else
-    puts "Invalid name. Please select again."
-    pick_striker(team)
-  end
-end
-
-current_team = nil
-
 def set_up_user_and_team
   user = welcome
   team = ask_for_team_name(user)
-  current_team = team
-  pick_goal_keeper(team)
-  pick_defender(team)
-  pick_midfielder(team, "first")
-  pick_midfielder(team, "second") #avoid duplicate midfielders
-  pick_striker(team)
+  puts "\nYou will need to select:\n1 Goalkeeper\n1 Defender\n2 Midfielders\n1 Striker\n"
+  team.pick_goal_keeper
+  team.pick_defender
+  team.pick_midfielder("first")
+  team.pick_midfielder("second") #avoid duplicate midfielders
+  team.pick_striker
+  return {team: team, user: user}
 end
 
-def play_or_set_up
-  puts "Would you like to:\n1. Set up a new user.\n2. Challenge another team.\n(setup or challenge or exit)"
-  choice = gets.chomp
-  if  choice == "setup"
-    set_up_user_and_team
-  elsif choice == "challenge"
-    play
-  # elsif choice == "exit"
-  #   break
+def compare_teams(team_1, team_2)
+  team_1_total = 0
+  team_1.players.each {|player| team_1_total += player.avg_points}
+  team_2_total = 0
+  team_2.players.each {|player| team_2_total += player.avg_points}
+
+  if team_1_total > team_2_total
+    team_1.user.wins += 1
+    team_2.user.losses += 1
+    return team_1
+  elsif team_2_total > team_1_total
+    team_2.user.wins += 1
+    team_1.user.losses +=1
+    return team_2
   else
-    puts "Unrecognised command"
-    play_or_set_up
+    team_1.user.draws += 1
+    team_2.user.draws += 1
+    return "Draw"
   end
 end
 
-def play
-
+def declare_winner(result)
+  if result.class == String
+    puts "\nThe game was a draw!\n"
+  else puts "\nTeam #{result.team_name} won the match! Congrats, #{result.user.username}!\n"
+  end
 end
+
+def play(hash)
+  user = hash[:user]
+  team = hash[:team]
+  puts "\nWhich team would you like to challenge?\n"
+#iterate
+numbered_teams = []
+  list_of_teams = Team.all.map { |team_hash|
+    team_hash.team_name }
+
+  Team.all.each_with_index { |team_hash, index|
+    numbered_teams << "#{index +1}. #{team_hash.team_name}" }
+
+  puts numbered_teams
+
+  chosen_team_number = gets.chomp.to_i
+  chosen_team_name = list_of_teams[chosen_team_number - 1]
+    if list_of_teams.any? {|team_obj| team_obj == chosen_team_name}
+      team_2 = Team.all.find {|team_obj| team_obj.team_name == chosen_team_name}
+    else
+      puts "\nUnrecognised team, please try again.\n"
+      play(hash)
+    end
+
+  result = compare_teams(team, team_2)
+  declare_winner(result)
+end
+
+# def compare_teams(team_2)
+#   team_1_total = 0
+#   self.players.each {|player| team_1_total += player.avg_points}
+#   team_2_total = 0
+#   team_2.players.each {|player| team_2_total += player.avg_points}
+#
+#   if team_1_total > team_2_total
+#     self.user.wins += 1
+#     team_2.user.losses += 1
+#     return team_1
+#   elsif team_2_total > team_1_total
+#     team_2.user.wins += 1
+#     self.user.losses +=1
+#     return team_2
+#   else
+#     self.user.draws += 1
+#     team_2.user.draws += 1
+#     return "Draw"
+#   end
+# end
+
+  # def play_or_exit(hash)
+  #   puts "Would you like to challenge another team? (Y/N)"
+  #   choice = gets.chomp.downcase
+  #     if choice == "y"
+  #       play(hash)
+  #     else
+  #       return "Thanks for playing!"
+  #     end
+  #   end
 
 
 

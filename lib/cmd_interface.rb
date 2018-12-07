@@ -53,7 +53,7 @@ end
 def total_team_goals(team)
   team_total_points = 0
   team.players.each {|player| team_total_points += player.avg_points}
-  return team_total_points / 2 + rand(1)
+  return team_total_points / 2
 end
 
 def compare_teams(team_1, team_2)
@@ -89,6 +89,9 @@ def play_or_exit(hash)
       play(hash)
     elsif choice == "n"
     ask_for_stats(hash)
+  else
+    puts "Invalid choice! Please select again."
+    play_or_exit(hash)
   end
   end
 

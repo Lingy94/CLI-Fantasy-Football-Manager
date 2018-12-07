@@ -36,7 +36,7 @@ class Team < ActiveRecord::Base
       end
       puts list_of_names
       chosen_player_number = gets.chomp.to_i
-      if chosen_player_number <= list_of_names.length
+      if chosen_player_number <= list_of_names.length && chosen_player_number != 0
     chosen_player_name = selected_data_def_array[chosen_player_number - 1]["second_name"]
         Player.all.each do |player_obj|
           if player_obj.second_name == chosen_player_name && player_obj.element_type == 2
@@ -59,7 +59,7 @@ class Team < ActiveRecord::Base
       puts list_of_names
       chosen_player_number = gets.chomp.to_i
 
-      if chosen_player_number <= list_of_names.length
+      if chosen_player_number <= list_of_names.length && chosen_player_number != 0
     chosen_player_name = selected_data_mid_array[chosen_player_number - 1]["second_name"]
         player_obj = Player.all.find{|player| player.second_name == chosen_player_name }
         # Player.all.each do |player_obj|
@@ -86,7 +86,7 @@ class Team < ActiveRecord::Base
 
       puts list_of_names
       chosen_player_number = gets.chomp.to_i
-      if chosen_player_number <= list_of_names.length
+      if chosen_player_number <= list_of_names.length && chosen_player_number != 0
     chosen_player_name = selected_data_strike_array[chosen_player_number - 1]["second_name"]
         Player.all.each do |player_obj|
           if player_obj.second_name == chosen_player_name && player_obj.element_type == 4

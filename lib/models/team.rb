@@ -58,14 +58,19 @@ class Team < ActiveRecord::Base
       end
       puts list_of_names
       chosen_player_number = gets.chomp.to_i
+
       if chosen_player_number <= list_of_names.length
     chosen_player_name = selected_data_mid_array[chosen_player_number - 1]["second_name"]
-        Player.all.each do |player_obj|
-          if player_obj.second_name == chosen_player_name && player_obj.element_type == 3
+        player_obj = Player.all.find{|player| player.second_name == chosen_player_name }
+        # Player.all.each do |player_obj|
+        #   if player_obj.second_name == chosen_player_name && player_obj.element_type == 3
+        if player_obj.teams.any?{|team| team == self}
+          puts "You have already selected this player. Please choose another player.".colorize(:red)
+          pick_midfielder(turn)
+        else
           Selection.create(team_id: self.id, player_id: player_obj.id)
           puts "\n#{chosen_player_number}. #{chosen_player_name} has been added to your team!\n".colorize(:green)
         end
-      end
       else
         puts "\nInvalid number. Please select again from list.\n".colorize(:red)
         self.pick_midfielder(turn)
@@ -95,24 +100,4 @@ class Team < ActiveRecord::Base
       end
     end
 
-    # def compare_teams(team_2)
-    #   team_1_total = 0
-    #   self.players.each {|player| team_1_total += player.avg_points}
-    #   team_2_total = 0
-    #   team_2.players.each {|player| team_2_total += player.avg_points}
-    #
-    #   if team_1_total > team_2_total
-    #     self.user.wins += 1
-    #     team_2.user.losses += 1
-    #     return team_1
-    #   elsif team_2_total > team_1_total
-    #     team_2.user.wins += 1
-    #     self.user.losses +=1
-    #     return team_2
-    #   else
-    #     self.user.draws += 1
-    #     team_2.user.draws += 1
-    #     return "Draw"
-    #   end
-    # end
 end

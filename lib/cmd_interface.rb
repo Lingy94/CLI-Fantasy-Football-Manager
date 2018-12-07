@@ -58,34 +58,55 @@ end
 def compare_teams(team_1, team_2)
   Gosu::Sample.new("lib/music/vuvuzela.mp3").play
   if total_team_goals(team_1) > total_team_goals(team_2)
-    winner = team_1
-    loser = team_2
+    new_team_1_var = team_1.user.wins + 1
+    new_team_2_var = team_2.user.losses + 1
+    team_2.user.update(losses: new_team_2_var)
+    team_1.user.update(wins: new_team_1_var)
     puts "\nThe score was #{team_1.team_name} #{total_team_goals(team_1)} - #{total_team_goals(team_2)} #{team_2.team_name}".colorize(:yellow)
     puts "#{team_1.team_name} won the match! Congrats, #{team_1.user.username}!\n".colorize(:yellow)
   elsif total_team_goals(team_1) < total_team_goals(team_2)
-    winner = team_2
-    loser = team_1
+    new_team_1_var = team_1.user.losses + 1
+    new_team_2_var = team_2.user.wins + 1
+    team_1.user.update(losses: new_team_1_var)
+    team_2.user.update(wins: new_team_2_var)
     puts "\nThe score was #{team_1.team_name} #{total_team_goals(team_1)} - #{total_team_goals(team_2)} #{team_2.team_name}".colorize(:yellow)
     puts "#{team_2.team_name} won the match! Congrats, #{team_2.user.username}!\n".colorize(:yellow)
   else
+    new_team_1_var = team_1.user.draws + 1
+    new_team_2_var = team_2.user.draws + 1
+    team_1.user.update(draws: new_team_1_var)
+    team_2.user.update(draws: new_team_2_var)
     puts "\nThe score was #{team_1.team_name} #{total_team_goals(team_1)} - #{total_team_goals(team_2)} #{team_2.team_name}".colorize(:yellow)
     puts "\nThe game was a draw!\n".colorize(:yellow)
   end
 end
 
 def play_or_exit(hash)
-  puts "Would you like to challenge another team? (Y/N)"
+  puts "Would you like to challenge another team? (Y/N)".colorize(:magenta)
   choice = gets.chomp.downcase
     if choice == "y"
       play(hash)
     elsif choice == "n"
-      bye = Artii::Base.new
-      puts bye.asciify('Thanks for playing!').colorize(:yellow)
-    else
-      puts "Invalid command. Please try again."
-      play_or_exit(hash)
-    end
+    ask_for_stats(hash)
   end
+  end
+
+  def ask_for_stats(hash)
+    puts "Would you like to ask for your stats? (Y/N)".colorize(:magenta)
+    choice2 = gets.chomp
+      if choice2.downcase == "y"
+        players_id = hash[:user].id
+        user = User.all.find {|user| user.id == players_id}
+        user.display_results
+      elsif choice2.downcase == "n"
+        bye = Artii::Base.new
+        puts bye.asciify('Thanks for playing!').colorize(:yellow)
+      else
+        puts "Invalid command. Please try again."
+        play_or_exit(hash)
+      end
+    end
+
 
 #
 # def compare_teams(team_1, team_2)

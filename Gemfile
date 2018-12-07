@@ -6,7 +6,9 @@ gem "sinatra-activerecord"
 gem "sqlite3"
 gem "pry"
 #gem 'terminal-table'
-# gem 'colorize'
-# gem 'artii'
-# gem 'rainbow'
+gem 'colorize'
+gem 'artii'
+# gem 'audio-playback'
+gem 'gosu'
+
 gem "require_all"

@@ -3,6 +3,8 @@ class Team < ActiveRecord::Base
   has_many :selections
   has_many :players, through: :selections
 
+
+
   def pick_goal_keeper
         puts "\nPick your goalkeeper by typing their number.\n".colorize(:magenta)
         list_of_names = []
@@ -11,7 +13,7 @@ class Team < ActiveRecord::Base
         end
         puts list_of_names
         chosen_player_number = gets.chomp.to_i
-        if chosen_player_number <= list_of_names.length
+        if chosen_player_number <= list_of_names.length && chosen_player_number != 0
           chosen_player_name = selected_data_gk_array[chosen_player_number - 1]["second_name"]
           Player.all.each do |player_obj|
             if player_obj.second_name == chosen_player_name && player_obj.element_type == 1
@@ -113,5 +115,4 @@ class Team < ActiveRecord::Base
     #     return "Draw"
     #   end
     # end
-
 end

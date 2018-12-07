@@ -1,0 +1,41 @@
+current directory: /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/gems/ruby-audio-1.6.1/ext/rubyaudio_ext
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20181207-16318-1pa8sl5.rb extconf.rb
+checking for sndfile.h in /opt/local/include,/usr/local/include,C:/Program Files (x86)/Mega-Nerd/libsndfile/include,C:/Program Files/Mega-Nerd/libsndfile/include... no
+checking for sf_open() in -lsndfile-1... no
+checking for sf_open() in -lsndfile... no
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/flatironschool/.rvm/rubies/ruby-2.3.3/bin/$(RUBY_BASE_NAME)
+	--with-sndfile-dir
+	--without-sndfile-dir
+	--with-sndfile-include
+	--without-sndfile-include=${sndfile-dir}/include
+	--with-sndfile-lib
+	--without-sndfile-lib=${sndfile-dir}/lib
+	--with-sndfile-1lib
+	--without-sndfile-1lib
+	--with-sndfilelib
+	--without-sndfilelib
+extconf.rb:21:in `<main>':   Can't find libsndfile (http://www.mega-nerd.com/libsndfile/) (RuntimeError)
+
+  Try passing --with-sndfile-dir or --with-sndfile-lib and --with-sndfile-include
+  options to extconf. If there are spaces in the path on windows, it may not work.
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/extensions/x86_64-darwin-18/2.3.0/ruby-audio-1.6.1/mkmf.log
+
+extconf failed, exit code 1

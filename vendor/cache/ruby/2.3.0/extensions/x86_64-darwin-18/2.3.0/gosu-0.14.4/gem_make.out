@@ -1,0 +1,658 @@
+current directory: /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/gems/gosu-0.14.4/ext/gosu
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20181207-25839-1591zkh.rb extconf.rb
+The Gosu gem requires some libraries to be installed system-wide.
+See the following site for a list:
+https://github.com/gosu/gosu/wiki/Getting-Started-on-OS-X
+creating Makefile
+
+current directory: /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/gems/gosu-0.14.4/ext/gosu
+make "DESTDIR=" clean
+
+current directory: /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/gems/gosu-0.14.4/ext/gosu
+make "DESTDIR="
+compiling ../../src/utf8proc.c
+compiling ../../src/stb_vorbis.c
+compiling ../../src/RubyGosu.cxx
+In file included from ../../src/RubyGosu.cxx:880:
+In file included from /Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby.h:33:
+In file included from /Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:1988:
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/intern.h:47:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/intern.h:47:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+../../src/RubyGosu.cxx:2301:22: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+        int width  = NUM2ULONG(rb_funcall(val, rb_intern("columns"), 0));
+            ~~~~~    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:2302:22: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+        int height = NUM2ULONG(rb_funcall(val, rb_intern("rows"), 0));
+            ~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:2306:31: warning: comparison of integers of different signs: 'long' and 'std::size_t' (aka 'unsigned long') [-Wsign-compare]
+        if (RSTRING_LEN(blob) == size) {
+            ~~~~~~~~~~~~~~~~~ ^  ~~~~
+../../src/RubyGosu.cxx:2310:36: warning: comparison of integers of different signs: 'long' and 'unsigned long' [-Wsign-compare]
+        else if (RSTRING_LEN(blob) == size * sizeof(float)) {
+                 ~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:2314:26: warning: implicit conversion loses integer precision: 'std::size_t' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+            for (int i = size; i > 0; --i) {
+                     ~   ^~~~
+../../src/RubyGosu.cxx:2683:41: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+            return *self == Gosu::Color(NUM2ULONG(other));
+                            ~~~~        ^~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3119:29: warning: implicit conversion loses integer precision: 'const unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        self->set_caret_pos(std::min(prefix.length(), self->text().length()));
+              ~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3131:35: warning: implicit conversion loses integer precision: 'const unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        self->set_selection_start(std::min(prefix.length(), self->text().length()));
+              ~~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3894:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3897:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[1]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3900:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg3 = Gosu::clamp<int>(NUM2ULONG(argv[2]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3946:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3949:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[1]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3952:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg3 = Gosu::clamp<int>(NUM2ULONG(argv[2]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:3955:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg4 = Gosu::clamp<int>(NUM2ULONG(argv[3]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4117:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4289:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4321:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4353:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4385:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4738:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4741:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[1]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4744:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg3 = Gosu::clamp<int>(NUM2ULONG(argv[2]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4774:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4777:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[1]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4780:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg3 = Gosu::clamp<int>(NUM2ULONG(argv[2]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4783:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg4 = Gosu::clamp<int>(NUM2ULONG(argv[3]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4898:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg1 = Gosu::clamp<int>(NUM2ULONG(argv[0]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4901:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg2 = Gosu::clamp<int>(NUM2ULONG(argv[1]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4904:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg3 = Gosu::clamp<int>(NUM2ULONG(argv[2]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:4907:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    arg4 = Gosu::clamp<int>(NUM2ULONG(argv[3]), 0, 255);
+           ~~~~             ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:5319:28: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        arg8 = Gosu::Color(NUM2ULONG(argv[6]));
+               ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:5463:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        arg10 = Gosu::Color(NUM2ULONG(argv[8]));
+                ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6231:28: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        arg7 = Gosu::Color(NUM2ULONG(argv[5]));
+               ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6342:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg7 = Gosu::Color(NUM2ULONG(argv[5]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6360:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg8 = Gosu::Color(NUM2ULONG(argv[6]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6378:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg9 = Gosu::Color(NUM2ULONG(argv[7]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6396:27: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg10 = Gosu::Color(NUM2ULONG(argv[8]));
+              ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6536:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+        arg10 = Gosu::Color(NUM2ULONG(argv[8]));
+                ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6689:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg4 = Gosu::Color(NUM2ULONG(argv[2]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6717:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg7 = Gosu::Color(NUM2ULONG(argv[5]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6745:27: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg10 = Gosu::Color(NUM2ULONG(argv[8]));
+              ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:6773:27: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg13 = Gosu::Color(NUM2ULONG(argv[11]));
+              ~~~~        ^~~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:9398:60: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    arg2 = NIL_P(argv[0]) ? Gosu::NO_BUTTON : Gosu::Button(NUM2LONG(argv[0]));
+                                              ~~~~         ^~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:665:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:664:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:9443:60: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    arg2 = NIL_P(argv[0]) ? Gosu::NO_BUTTON : Gosu::Button(NUM2LONG(argv[0]));
+                                              ~~~~         ^~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:665:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:664:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10115:60: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    arg1 = NIL_P(argv[0]) ? Gosu::NO_BUTTON : Gosu::Button(NUM2LONG(argv[0]));
+                                              ~~~~         ^~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:665:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:664:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10142:60: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    arg1 = NIL_P(argv[0]) ? Gosu::NO_BUTTON : Gosu::Button(NUM2LONG(argv[0]));
+                                              ~~~~         ^~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:665:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:664:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10195:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg3 = Gosu::Color(NUM2ULONG(argv[2]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10223:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg6 = Gosu::Color(NUM2ULONG(argv[5]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10322:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg3 = Gosu::Color(NUM2ULONG(argv[2]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10350:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg6 = Gosu::Color(NUM2ULONG(argv[5]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10378:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg9 = Gosu::Color(NUM2ULONG(argv[8]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10484:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg3 = Gosu::Color(NUM2ULONG(argv[2]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10512:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg6 = Gosu::Color(NUM2ULONG(argv[5]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10540:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg9 = Gosu::Color(NUM2ULONG(argv[8]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10568:27: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg12 = Gosu::Color(NUM2ULONG(argv[11]));
+              ~~~~        ^~~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+../../src/RubyGosu.cxx:10669:26: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+      arg5 = Gosu::Color(NUM2ULONG(argv[4]));
+             ~~~~        ^~~~~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:675:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^~~~~~~~~~~~~~~
+/Users/flatironschool/.rvm/rubies/ruby-2.3.3/include/ruby-2.3.0/ruby/ruby.h:674:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^~~~~~~~~~~~~~~~~~~~~~
+59 warnings generated.
+compiling ../../src/DirectoriesApple.cpp
+compiling ../../src/BitmapIO.cpp
+../../src/BitmapIO.cpp:32:36: warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        size_t actual_size = (size < remaining ? size : remaining);
+                              ~~~~ ^ ~~~~~~~~~
+In file included from ../../src/BitmapIO.cpp:18:
+../../src/stb_image.h:1135:13: warning: unused function 'stbi__float_postprocess' [-Wunused-function]
+static void stbi__float_postprocess(float *result, int *x, int *y, int *comp, int req_comp)
+            ^
+2 warnings generated.
+compiling ../../src/Input.cpp
+../../src/Input.cpp:171:27: warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        for (int i = 0; i < available_gamepads; ++i) {
+                        ~ ^ ~~~~~~~~~~~~~~~~~~
+../../src/Input.cpp:175:19: warning: comparison of integers of different signs: 'int' and 'std::__1::vector<_SDL_GameController *, std::__1::allocator<_SDL_GameController *> >::size_type' (aka 'unsigned long') [-Wsign-compare]
+            if (i < game_controllers.size()) {
+                ~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+../../src/Input.cpp:187:31: warning: comparison of integers of different signs: 'int' and 'std::__1::array::size_type' (aka 'unsigned long') [-Wsign-compare]
+            for (int j = 0; j < current_gamepad.size(); ++j) {
+                            ~ ^ ~~~~~~~~~~~~~~~~~~~~~~
+../../src/Input.cpp:202:27: warning: comparison of integers of different signs: 'int' and 'std::__1::array::size_type' (aka 'unsigned long') [-Wsign-compare]
+        for (int j = 0; j < any_gamepad.size(); ++j) {
+                        ~ ^ ~~~~~~~~~~~~~~~~~~
+4 warnings generated.
+compiling ../../src/Macro.cpp
+In file included from ../../src/Macro.cpp:2:
+In file included from ../../src/DrawOpQueue.hpp:4:
+../../src/DrawOp.hpp:108:36: warning: comparison of integers of different signs: 'unsigned int' and 'const int' [-Wsign-compare]
+            for (unsigned i = 0; i < vertices_or_block_index; i++) {
+                                 ~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling ../../src/InputUIKit.cpp
+compiling ../../src/Image.cpp
+compiling ../../src/Text.cpp
+../../src/Text.cpp:93:27: warning: comparison of integers of different signs: 'int' and 'std::__1::vector<std::__1::vector<Gosu::FormattedString, std::__1::allocator<Gosu::FormattedString> >, std::__1::allocator<std::__1::vector<Gosu::FormattedString, std::__1::allocator<Gosu::FormattedString> > > >::size_type' (aka 'unsigned long') [-Wsign-compare]
+        for (int i = 0; i < lines.size(); ++i) {
+                        ~ ^ ~~~~~~~~~~~~
+1 warning generated.
+compiling ../../src/WindowUIKit.cpp
+compiling ../../src/Bitmap.cpp
+compiling ../../src/TrueTypeFont.cpp
+In file included from ../../src/TrueTypeFont.cpp:12:
+../../src/stb_truetype.h:2454:42: warning: unused variable 'pairSetCount' [-Wunused-variable]
+                            stbtt_uint16 pairSetCount = ttUSHORT(table + 8);
+                                         ^
+1 warning generated.
+compiling ../../src/BlockAllocator.cpp
+compiling ../../src/Window.cpp
+compiling ../../src/Version.cpp
+compiling ../../src/Channel.cpp
+compiling ../../src/Resolution.cpp
+../../src/Resolution.cpp:37:18: warning: 'NSTitledWindowMask' is deprecated: first deprecated in macOS 10.12 [-Wdeprecated-declarations]
+    auto style = NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask;
+                 ^~~~~~~~~~~~~~~~~~
+                 NSWindowStyleMaskTitled
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h:952:32: note: 'NSTitledWindowMask' has been explicitly marked deprecated here
+static const NSWindowStyleMask NSTitledWindowMask NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSWindowStyleMaskTitled", 10_0, 10_12) = NSWindowStyleMaskTitled;
+                               ^
+../../src/Resolution.cpp:37:37: warning: 'NSClosableWindowMask' is deprecated: first deprecated in macOS 10.12 [-Wdeprecated-declarations]
+    auto style = NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask;
+                                    ^~~~~~~~~~~~~~~~~~~~
+                                    NSWindowStyleMaskClosable
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h:953:32: note: 'NSClosableWindowMask' has been explicitly marked deprecated here
+static const NSWindowStyleMask NSClosableWindowMask NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSWindowStyleMaskClosable", 10_0, 10_12) = NSWindowStyleMaskClosable;
+                               ^
+../../src/Resolution.cpp:37:58: warning: 'NSMiniaturizableWindowMask' is deprecated: first deprecated in macOS 10.12 [-Wdeprecated-declarations]
+    auto style = NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask;
+                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                         NSWindowStyleMaskMiniaturizable
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h:954:32: note: 'NSMiniaturizableWindowMask' has been explicitly marked deprecated here
+static const NSWindowStyleMask NSMiniaturizableWindowMask NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSWindowStyleMaskMiniaturizable", 10_0, 10_12) = NSWindowStyleMaskMiniaturizable;
+                               ^
+3 warnings generated.
+compiling ../../src/Math.cpp
+compiling ../../src/TexChunk.cpp
+In file included from ../../src/TexChunk.cpp:2:
+In file included from ../../src/DrawOpQueue.hpp:4:
+../../src/DrawOp.hpp:108:36: warning: comparison of integers of different signs: 'unsigned int' and 'const int' [-Wsign-compare]
+            for (unsigned i = 0; i < vertices_or_block_index; i++) {
+                                 ~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+../../src/TexChunk.cpp:90:48: warning: comparison of integers of different signs: 'unsigned int' and 'int' [-Wsign-compare]
+    if (x < 0 || y < 0 || x + original.width() > w || y + original.height() > h) {
+                          ~~~~~~~~~~~~~~~~~~~~ ^ ~
+../../src/TexChunk.cpp:90:77: warning: comparison of integers of different signs: 'unsigned int' and 'int' [-Wsign-compare]
+    if (x < 0 || y < 0 || x + original.width() > w || y + original.height() > h) {
+                                                      ~~~~~~~~~~~~~~~~~~~~~ ^ ~
+3 warnings generated.
+compiling ../../src/Font.cpp
+compiling ../../src/Audio.cpp
+In file included from ../../src/Audio.cpp:14:
+../../src/AudioToolboxFile.hpp:44:16: warning: private field 'bytes_per_frame_' is not used [-Wunused-private-field]
+        UInt32 bytes_per_frame_;
+               ^
+../../src/AudioToolboxFile.hpp:45:14: warning: private field 'big_endian_' is not used [-Wunused-private-field]
+        bool big_endian_;
+             ^
+2 warnings generated.
+compiling ../../src/Texture.cpp
+compiling ../../src/WinUtility.cpp
+compiling ../../src/TextBuilder.cpp
+../../src/TextBuilder.cpp:135:28: warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
+    if (current_line_width > result.width() || new_word.is_end_of_line) {
+        ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+1 warning generated.
+compiling ../../src/LargeImageData.cpp
+compiling ../../src/TrueTypeFontUnix.cpp
+compiling ../../src/UtilityApple.cpp
+compiling ../../src/AudioImpl.cpp
+../../src/AudioImpl.cpp:64:23: warning: comparison of integers of different signs: 'int' and 'const unsigned int' [-Wsign-compare]
+    for (int i = 1; i < CHANNELS; ++i) {
+                    ~ ^ ~~~~~~~~
+../../src/AudioImpl.cpp:80:35: warning: comparison of integers of different signs: 'int' and 'const unsigned int' [-Wsign-compare]
+    return channel < 0 || channel >= CHANNELS || _tokens[channel] != token;
+                          ~~~~~~~ ^  ~~~~~~~~
+../../src/AudioImpl.cpp:85:32: warning: comparison of integers of different signs: 'int' and 'const unsigned int' [-Wsign-compare]
+    if (channel < 0 || channel >= CHANNELS) {
+                       ~~~~~~~ ^  ~~~~~~~~
+3 warnings generated.
+compiling ../../src/MarkupParser.cpp
+compiling ../../src/DirectoriesUnix.cpp
+compiling ../../src/Color.cpp
+compiling ../../src/OffScreenTarget.cpp
+compiling ../../src/DirectoriesWin.cpp
+compiling ../../src/Graphics.cpp
+In file included from ../../src/Graphics.cpp:2:
+../../src/DrawOp.hpp:108:36: warning: comparison of integers of different signs: 'unsigned int' and 'const int' [-Wsign-compare]
+            for (unsigned i = 0; i < vertices_or_block_index; i++) {
+                                 ~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling ../../src/FileUnix.cpp
+compiling ../../src/IO.cpp
+compiling ../../src/Transform.cpp
+compiling ../../src/WinMain.cpp
+compiling ../../src/TimingWin.cpp
+compiling ../../src/FileWin.cpp
+compiling ../../src/GosuGLView.cpp
+compiling ../../src/UtilityWin.cpp
+compiling ../../src/TextInput.cpp
+compiling ../../src/TrueTypeFontApple.cpp
+compiling ../../src/Inspection.cpp
+compiling ../../src/TrueTypeFontWin.cpp
+compiling ../../src/GosuViewController.cpp
+compiling ../../src/Utility.cpp
+compiling ../../src/TimingApple.cpp
+compiling ../../src/TimingUnix.cpp
+linking shared-object gosu.bundle
+
+current directory: /Users/flatironschool/Development/code/module-one-final-project-guidelines-london-web-111918/vendor/cache/ruby/2.3.0/gems/gosu-0.14.4/ext/gosu
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 gosu.bundle ./.gem.20181207-25839-21zof1

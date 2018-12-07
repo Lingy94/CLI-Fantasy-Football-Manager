@@ -39,6 +39,7 @@ end
 def set_up_user_and_team
   user = welcome
   team = ask_for_team_name(user)
+  puts "\nPick players who you think will help you win the match!\n"
   puts "\nYou will need to select:\n"
   puts "1 Goalkeeper\n1 Defender\n2 Midfielders\n1 Striker\n".colorize(:green)
   team.pick_goal_keeper

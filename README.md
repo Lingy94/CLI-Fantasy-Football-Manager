@@ -9,6 +9,8 @@ Tasked with writing an app in the CLI, we decided on using a fantasy football AP
 
 The app will focus on CRUD - Creating, Reading, Updating and Deleting.
 
+Video Demo - https://www.youtube.com/watch?v=Sq8RVIxuKJY
+
 ## Setup
 
 - Open terminal and cd into this directory.
